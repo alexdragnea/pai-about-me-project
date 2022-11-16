@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <style>
+        #map {
+            height: 100%;
+        }
+
+        /*!* Optional: Makes the sample page fill the window. *!*/
+        /*html,*/
+        /*body {*/
+        /*    height: 100%;*/
+        /*    margin: 0;*/
+        /*    padding: 0;*/
+        /*}*/
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content=
+            "width=device-width, initial-scale=1.0">
+    <title>Dragnea Alexandru Marian</title>
+<!--    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>-->
+    <script th:inline="javascript">
+        function initMap() {
+            const myLatFrance = { lat: 46.2276, lng: 2.2137 };
+            const myLatGermany = { lat: 51.1657, lng: 10.4515 };
+            const myLatItaly = { lat: 41.8719, lng: 12.5674 };
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 4,
+                center: myLatFrance,
+                center: myLatGermany,
+                center: myLatItaly,
+            });
+            new google.maps.Marker({
+                position: myLatFrance,
+                map,
+                title: "France!",
+            });
+            new google.maps.Marker({
+                position: myLatGermany,
+                map,
+                title: "Germany!",
+            });
+
+            new google.maps.Marker({
+                position: myLatItaly,
+                map,
+                title: "Italy!",
+            });
+        }
+
+        window.initMap = initMap;
+
+
+    </script>
+</head>
+<body>
+<div th:include="./fragments/header.html"></div><!--Header(end)-->
+
+<!--Home(start)-->
+<table id="home" border="1" width="100%"
+       cellpadding="20" cellspacing="0" bgcolor="black">
+    <tr>
+        <td>
+            <table border="0" cellpadding="15"
+                   cellspacing="0" width="90%" align="center">
+                <tr>
+                    <td align="center" valign="middle">
+                        <h3>
+                            <font face="Times New Roman"
+                                  size="6" color="#ffffff">
+                                Hi !
+                            </font>
+                        </h3>
+
+                        <h2>
+                            <font face="Verdana" size="6"
+                                  color="#4CAF50">
+                                <!-- Freelance Programmer -->
+                            </font>
+                        </h2>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<!--Home(end)-->
+
+
+<!--About(start)-->
+<table id="about" border="0" width="100%"
+       cellpadding="0" cellspacing="0" bgcolor="black">
+    <tr>
+        <td>
+            <table border="0" cellpadding="15"
+                   cellspacing="0" width="80%" align="center">
+                <tr>
+                    <td height="140" align="center"
+                        valign="middle" colspan="2">
+                        <font face="Verdana" size="7"
+                              color="#4CAF50">
+                            About Me
+                        </font>
+                        <hr color="#4CAF50" width="90">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td width="40%">
+                        <img src="../static/img/fotografie.jpg" th:src="@{img/fotografie.jpg}" width="600"
+                             height="600" />
+                    </td>
+
+                    <td width="60%">
+                        <font face="Verdana" size="4"
+                              color="white">
+                            Thanks for your interest, here
+                            is a quick story of me and this
+                            website.
+                            <hr color="black">
+                            My name is Dragnea Alexandru Marian and I love
+                            to solve programming problems
+                            in most efficient ways.Currently working as a Java Developer at Endava.
+                            <hr color="black">
+
+                            I do my work mainly in JAVA and Spring Ecosystem & Microservices are my stronger section.
+                            Besides these I know Web Development,
+                            LINUX, databases (SQL,NoSQL) as well.
+                            <hr color="black">
+
+                            This website is basically one of my
+                            Web Development project which is
+                            built using JAVA, HTML, CSS and Thymeleaf as a template Engine.
+                            Here one can also find ideas for
+                            projects in different languages.
+
+                            Thanks again for reading this,
+                            because of people like you, it
+                            exists and prospers!
+                            <hr color="black">
+                            Cheers.
+                            <br>
+                        </font>
+                    </td>
+                </tr>
+            </table>
+            <hr color="black">
+            <hr color="black">
+            <hr color="black">
+        </td>
+    </tr>
+</table>
+<!--About(end)-->
+
+<table id="contact" border="0" width="100%"
+       cellpadding="0" cellspacing="0" bgcolor="#4CAF50">
+    <tr>
+        <td>
+            <table border="0" cellpadding="10"
+                   cellspacing="0" width="90%" align="center">
+                <tr>
+                    <td width="15%" valign="top">
+                        <b>LinkedIn</b>
+                        <a href="https://www.linkedin.com/in/dragnea-alexandru-77a531196/" style="text-decoration:none">
+                            ➲
+                        </a>
+                    </td>
+
+                    <td>
+                        |
+                    </td>
+
+                    <td width="15%" valign="top">
+                        <b>GitHub</b>
+                        <a href="https://github.com/alexdragnea" style="text-decoration:none">
+                            ➲
+                        </a>
+                    </td>
+
+                    <td>
+                        |
+                    </td>
+
+                    <td width="15%" valign="top">
+                        <b>Email</b>
+                        <a href="mailto: alexdg722@gmail.com" style="text-decoration:none">
+                            ➲
+                        </a>
+                    </td>
+
+                    <td>
+                        |
+                    </td>
+
+                    <td width="15%" valign="top">
+                        <b>Website</b>
+                        <a href="http://mywebsite.ro" style="text-decoration:none">
+                            ➲
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+
+<!--Projects(start)-->
+<table id="projects" border="0" width="100%"
+       cellpadding="0" cellspacing="0" bgcolor="#c2c0c3">
+    <tr>
+        <td>
+            <table border="0" cellpadding="15"
+                   cellspacing="0" width="80%" align="center">
+                <tr>
+                    <td height="140" align="center"
+                        valign="middle" colspan="2">
+                        <font face="Verdana" size="7"
+                              color="black">
+                            Projects
+                        </font>
+                        <hr color="black" width="90">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td height="10">
+                        <font face="Times New Roman"
+                              size="5" color="black">
+                            <ul>
+                                <li>
+                                    E-Commerce App
+                                    <a href="https://github.com/alexdragnea/E-Commerce-SpringBoot" style="text-decoration:none">
+                                        ➲
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <hr color="#c2c0c3">
+                                    Spring Kafka with Microservices
+                                    <a href="https://github.com/alexdragnea/spring-kafka-microservices" style="text-decoration:none"
+                                       color="#c2c0c3">
+                                        ➲
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <hr color="#c2c0c3">
+                                    Spring Webflux
+                                    <a href="https://github.com/alexdragnea/spring-webflux" style="text-decoration:none">
+                                        ➲
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <hr color="#c2c0c3">
+                                    Spring Boot with Docker and PostgreSQL
+                                    <a href="https://github.com/alexdragnea/SpringBoot-Docker-PostgreSQL" style="text-decoration:none">
+                                        ➲
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <hr color="#c2c0c3">
+                                    Spring Boot with MongoDB
+                                    <a href="https://github.com/alexdragnea/SpringBoot-MongoDB-Jwt" style="text-decoration:none">
+                                        ➲
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <hr color="#c2c0c3">
+                                    Spring Boot with OpenShift
+                                    <a href="https://github.com/alexdragnea/Springboot-Airline-Openshift" style="text-decoration:none">
+                                        ➲
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <hr color="#c2c0c3">
+                                    RESTful Application with Spring Boot and OpenFeign
+                                    <a href="https://github.com/alexdragnea/SpringBoot-openfeign-rest" style="text-decoration:none">
+                                        ➲
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <hr color="#c2c0c3">
+                                    Fee Management System with Spring Boot
+                                    <a href="https://github.com/alexdragnea/FeeManagment-SpringBoot" style="text-decoration:none">
+                                        ➲
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <hr color="#c2c0c3">
+                                    Todo App with Spring Boot
+                                    <a href="https://github.com/alexdragnea/TodoApp-SpringBoot" style="text-decoration:none">
+                                        ➲
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <hr color="#c2c0c3">
+                                    Coronavirus Tracker with Spring Boot
+                                    <a href="https://github.com/alexdragnea/Coronavirus-Tracker-SpringBoot" style="text-decoration:none">
+                                        ➲
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </font>
+                    </td>
+
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<!--Projects(end)-->
+
+
+<!--Achievement(start)-->
+<table id="achievements" border="0" width="100%"
+       cellpadding="0" cellspacing="0" bgcolor="black">
+    <tr>
+        <td>
+            <table border="0" cellpadding="15"
+                   cellspacing="0" width="80%" align="center">
+                <tr>
+                    <td height="140" align="center" valign="middle">
+                        <font face="Verdana" size="7" color="#4CAF50">
+                            Achievements
+                            <hr color="#4CAF50" width="100">
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <font face="Verdana" size="4" color="white">
+                            <ul>
+                                <li>
+                                    <b>School for Java at Endava</b>
+                                    <ul>
+                                        <li>
+                                            Jan-March 2021
+                                        </li>
+                                        <li>
+                                            Learn Spring Ecosystem, Java 8, Design Patterns and OOP principles & best practices, SQL databases and as a final project I did an application with everything learned.
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <b>Java Developer at Endama</b>
+                                    <ul>
+                                        <li>
+                                            August,2021 - Present.
+                                        </li>
+                                        <li>
+                                            Take part in building microservices for banking sector, write documentation, use and integration of CI/CD, TDD & BDD principles, Agile framework.
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                        </font>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<!--Achievement(end)-->
+
+<!--Map(start)-->
+<table id="maps" border="0" width="100%"
+       cellpadding="0" cellspacing="0" bgcolor="black">
+    <tr>
+        <td>
+            <table border="0" cellpadding="15"
+                   cellspacing="0" width="80%" align="center">
+                <tr>
+                    <td height="140" align="center" valign="middle">
+                        <font face="Verdana" size="7" color="#4CAF50">
+                            Visited Countries
+                            <hr color="#4CAF50" width="100">
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td width="40%">
+                        <div id="map" style="width:1200px; height: 450px; margin-left: auto; margin-right: auto"></div>
+                        <br>
+                    </td>
+
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<!--Map(end)-->
+<script th:inline="javascript" defer="defer"
+        src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&v=weekly"></script>
+
+<div th:include="./fragments/footer.html"></div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content=
+            "width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+</head>
+<body>
+
+<div th:include="./fragments/header.html"></div>
+<hr>
+
+<div class="d-flex justify-content-center">
+
+    <div class="border border-secondary p-3 rounded">
+
+        <div th:if="${param.success}">
+            <div class="alert alert-info">You've successfully registered
+                to our app!
+            </div>
+        </div>
+
+        <div th:if="${message}">
+            <div class="alert alert-danger">Account already exists.</div>
+        </div>
+
+        <h1>Registration</h1>
+
+        <form th:action="@{/register}" method="post" th:object="${user}">
+            <div class="alert alert-danger" th:if="${#fields.hasErrors('*')}">
+                <p th:each="err : ${#fields.errors('*')}" th:text="${err}"></p>
+            </div>
+            <div class="form-group">
+                <input id="firstName" class="form-control" th:field="*{firstName}"
+                       placeholder="First name" th:errorclass="is-invalid"/>
+            </div>
+
+            <div class="form-group">
+                <input id="lastName" class="form-control" th:field="*{lastName}"
+                       placeholder="Last name" th:errorclass="is-invalid"/>
+            </div>
+
+            <div class="form-group">
+                <input id="email" class="form-control" th:field="*{email}"
+                       placeholder="Email" th:errorclass="is-invalid"/>
+            </div>
+
+            <div class="form-group">
+                <input
+                        id="password" class="form-control" type="password"
+                        th:field="*{password}"
+                        placeholder="Password" th:errorclass="is-invalid"/>
+            </div>
+
+            <hr>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Register</button>
+                <span>Already registered? <a href="/" th:href="@{/login}">Login
+								here</a></span>
+            </div>
+
+
+        </form>
+        <br>
+    </div>
+</div>
+
+<div th:include="./fragments/footer.html"></div>
+</body>
+</html>
