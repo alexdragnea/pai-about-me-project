@@ -54,7 +54,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/js/**",
                         "/static/**",
                         "/register**",
-                        "/js/**",
                         "/pdfFiles/**",
                         "/resources/**",
                         "/forgot-password/**",
