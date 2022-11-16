@@ -60,11 +60,9 @@ public class RegisterController {
                 confirmationTokenRepository.save(confirmationToken);
                 SimpleMailMessage mailMessage = new SimpleMailMessage();
                 mailMessage.setTo(user.getEmail());
-                mailMessage.setSubject("Complete Registration");
+                mailMessage.setSubject("Registration succesfull");
                 mailMessage.setFrom("javaprojects1999@gmail.com");
-                mailMessage.setText("To confirm your account, please click here: "
-                        + "http://localhost:8888/confirm-account?token="
-                        + confirmationToken.getConfirmationToken());
+                mailMessage.setText("Your account has been succesfully registered, you can proceed with loging.");
 
                 emailService.sendEmail(mailMessage);
                 modelAndView.addObject("email", user.getEmail());

@@ -29,33 +29,6 @@ public class LoginController {
         return "login";
     }
 
-    @GetMapping("/403")
-    public String error403() {
-        return "error403";
-    }
-
-    @RequestMapping(value = "/confirm-account", method = {RequestMethod.GET, RequestMethod.POST})
-    public ModelAndView confirmUserAccount(ModelAndView modelAndView, @RequestParam("token") String confirmationToken) {
-
-        ConfirmationToken token = confirmationTokenRepository.findByConfirmationToken(confirmationToken);
-
-        if (token != null) {
-            Optional<User> optional = userRepository.findByEmail(token.getUser().getEmail());
-            if (optional.isPresent()) {
-
-                User user = optional.get();
-                user.setAccountUnLocked();
-                userRepository.save(user);
-                modelAndView.setViewName("accountVerified");
-            }
-        } else {
-            modelAndView.addObject("message", "true");
-            modelAndView.setViewName("accountVerified");
-        }
-
-        return modelAndView;
-    }
-
     @GetMapping("/forgot-password")
     public ModelAndView displayResetPassword(ModelAndView modelAndView, User user) {
         modelAndView.addObject("user", user);

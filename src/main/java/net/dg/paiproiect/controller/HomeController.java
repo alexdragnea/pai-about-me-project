@@ -10,9 +10,4 @@ public class HomeController {
     String index() {
         return "home";
     }
-
-    @GetMapping("/map")
-    String inde2() {
-        return "map";
-    }
 }

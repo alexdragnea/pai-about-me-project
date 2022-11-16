@@ -49,7 +49,7 @@ public class User implements UserDetails {
 
     @Column(name = "isNonLocked")
     @Builder.Default
-    private boolean isNonLocked = false;
+    private boolean isNonLocked = true;
 
 
     @Override
@@ -64,7 +64,7 @@ public class User implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return true;
+        return false;
     }
 
     @Override

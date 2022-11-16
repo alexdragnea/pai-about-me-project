@@ -49,6 +49,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/",
                         "/*.js",
                         "*.js",
+                        "/error",
                         "/js/",
                         "/js/**",
                         "/static/**",
